@@ -9,7 +9,9 @@
 <body>
 	<jsp:useBean id="formationList" scope="application" class="org.formation.bean.FormationList"/>
 	<%= formationList.size() %>
-	<% for(org.formation.bean.Formation formation: formationList) { %>
+	<%
+	for(org.formation.model.Formation formation: formationList) {
+	%>
 		<%= formation %>
 		</br>
 	<% } %>
