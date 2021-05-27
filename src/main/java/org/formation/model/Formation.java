@@ -3,7 +3,7 @@ package org.formation.model;
 import jakarta.annotation.ManagedBean;
 
 @ManagedBean
-public class Formation {
+public class Formation extends BaseModel {
 	private String date;
 	private Sujet sujet;
 	private Formateur formateur;
@@ -31,11 +31,11 @@ public class Formation {
 		this.date = date;
 	}
 
-	public String getSujet() {
+	public Sujet getSujet() {
 		return sujet;
 	}
 
-	public void setSujet(String sujet) {
+	public void setSujet(Sujet sujet) {
 		this.sujet = sujet;
 	}
 
@@ -61,5 +61,11 @@ public class Formation {
 
 	public void setStatutFormateur(String statutFormateur) {
 		this.statutFormateur = statutFormateur;
+	}
+	public Integer getPaieFormateur() {
+		return paieFormateur;
+	}
+	public void setPaieFormateur(Integer paieFormateur) {
+		this.paieFormateur = paieFormateur;
 	}
 }
