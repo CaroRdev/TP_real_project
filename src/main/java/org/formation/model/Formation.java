@@ -18,7 +18,7 @@ public class Formation extends BaseModel {
 	private static List<Formation> formationList = null;
 	
 	public static List<Formation> getAll() {
-		if(formationList == null) formationList = Fixture.getSujetList();
+		if(formationList == null) formationList = Fixture.getFormationList();
 		return formationList;
 	}
 	// End of static members region

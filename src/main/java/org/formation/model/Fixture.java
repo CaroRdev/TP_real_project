@@ -18,7 +18,7 @@ public class Fixture {
 		return formationFixture;
 	}
 
-	public static List<Formateur> getFormateur() {
+	public static List<Formateur> getFormateurList() {
 		if( formateurFixture == null ) initAll();
 		return formateurFixture;
 	}
