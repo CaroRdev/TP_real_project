@@ -34,7 +34,7 @@ jobs:
     - name: Run Tomcat
       run: bash .github/scripts/run_tomcat.sh      
     - name: Run all tests 
-      run: bash test_as_shell/test_tp1.sh
+      run: bash test_as_shell/test_all.sh
     - name: Shutdown
       run: bash /opt/tomcat/bin/shutdown.sh
 
