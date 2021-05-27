@@ -3,6 +3,7 @@ package org.formation.model;
 import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
+import java.lang.reflect.Modifier;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
@@ -29,7 +30,11 @@ public abstract class BaseModel {
 		
 		for(Method m: methodList) {
 			
-			if(m.getName().startsWith("get") && m.getName() != "getClass") {
+			if(m.getName().startsWith("get") 
+					&& m.getName() != "getClass"
+					&& ((m.getModifiers() & Modifier.STATIC) == 0)
+				) {
+
 				try {
 					result += ";" + m.invoke(this).toString(); 
 				} catch (NullPointerException e) {
