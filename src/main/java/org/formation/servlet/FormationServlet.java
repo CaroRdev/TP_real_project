@@ -12,16 +12,14 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.PushBuilder;
 
-/* #Exercice n 2
+/* #Exercice n 1
  * 
  * Ce controlleur sert just à renvoyer le jsp
  */
-@WebServlet("/FormPrenomNom")
-public class FormPrenomNomServlet extends HttpServlet {
+@WebServlet("/Formation")
+public class FormationServlet extends HttpServlet {
 	@Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws IOException,ServletException {
-		request.setAttribute("action", "Bonjour");
-		request.setAttribute("method", "GET");
-		request.getRequestDispatcher("/FormPrenomNom.jsp").forward(request, resp);
+    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws IOException,ServletException {    			
+		request.getRequestDispatcher("/Formation.jsp").forward(request, resp);
 	}
 }
