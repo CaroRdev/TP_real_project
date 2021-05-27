@@ -10,10 +10,11 @@ public class Formation extends BaseModel {
 	private Integer paieFormateur;
 	private String statut;
 	private String statutFormateur;
-
+	private Long id;
+	
 	public Formation() {}
 	public Formation(String date, Sujet sujet, Formateur formateur, Integer paieFormateur, String statut,
-			String statutFormateur) {
+			String statutFormateur, Long id) {
 		super();
 		this.date = date;
 		this.sujet = sujet;
@@ -21,6 +22,7 @@ public class Formation extends BaseModel {
 		this.paieFormateur = paieFormateur;
 		this.statut = statut;
 		this.statutFormateur = statutFormateur;
+		this.id = id;
 	}
 	
 	public String getDate() {
@@ -67,5 +69,11 @@ public class Formation extends BaseModel {
 	}
 	public void setPaieFormateur(Integer paieFormateur) {
 		this.paieFormateur = paieFormateur;
+	}
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
 	}
 }

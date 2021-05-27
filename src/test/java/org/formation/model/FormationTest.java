@@ -6,14 +6,15 @@ public class FormationTest extends TestCase {
 	public void testToString()
 	{     
         assertEquals(
-        	"Formation;20210528;NULL;300;active;original;NULL",
+        	"Formation;20210528;NULL;1;300;active;original;NULL",
         	(new Formation(
         		"20210528", 
         		null, 
         		null,
         		300,
         		"active",
-        		"original"
+        		"original",
+        		Long.valueOf(1)
         	)).toString()
         );
     }

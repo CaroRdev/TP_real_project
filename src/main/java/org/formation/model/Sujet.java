@@ -1,13 +1,13 @@
 package org.formation.model;
 
-public class Sujet {
+public class Sujet extends BaseModel {
 	private Long id;
 	private String nom;
 	
-	public Sujet(Long id, String nom) {
+	public Sujet(String nom, Long id) {
 		super();
-		this.id = id;
 		this.nom = nom;
+		this.id = id;
 	}
 	
 	public Long getId() {

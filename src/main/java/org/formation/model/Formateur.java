@@ -11,7 +11,7 @@ import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
 import javax.persistence.Table;
 
-public class Formateur {
+public class Formateur extends BaseModel {
 	private String nom;
 	private Integer Solde;
 	private Long id;
