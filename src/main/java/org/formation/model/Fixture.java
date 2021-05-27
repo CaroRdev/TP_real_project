@@ -1,5 +1,6 @@
 package org.formation.model;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class Fixture {
@@ -23,6 +24,7 @@ public class Fixture {
 	}
 	
 	private static void initAll() {
-		
+		sujetFixture = new ArrayList<Sujet>();
+		sujetFixture.add(new Sujet("Alchimie", 1));
 	}
 }

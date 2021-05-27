@@ -7,11 +7,7 @@ public class FormateurTest extends TestCase {
 	{     
         assertEquals(
         	"Formateur;1;Dumbledore;500;[]",
-        	(new Formateur(
-        		"Dumbledore", 
-        		500, 
-        		Long.valueOf(1)
-        	)).toString()
+        	(new Formateur("Dumbledore", 500, 1)).toString()
         );
     }
 }

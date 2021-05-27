@@ -7,7 +7,7 @@ public class SujetTest extends TestCase {
 	{     
         assertEquals(
         	"Sujet;1;Java",
-        	(new Sujet("Java",Long.valueOf(1))).toString()
+        	(new Sujet("Java", 1)).toString()
         );
     }
 }

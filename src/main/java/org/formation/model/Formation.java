@@ -1,5 +1,7 @@
 package org.formation.model;
 
+import java.util.List;
+
 import jakarta.annotation.ManagedBean;
 
 @ManagedBean
@@ -10,11 +12,20 @@ public class Formation extends BaseModel {
 	private Integer paieFormateur;
 	private String statut;
 	private String statutFormateur;
-	private Long id;
+	private Integer id;
+	
+	// Region static members
+	private static List<Formation> formationList = null;
+	
+	public static List<Formation> getAll() {
+		if(formationList == null) formationList = Fixture.getSujetList();
+		return formationList;
+	}
+	// End of static members region
 	
 	public Formation() {}
 	public Formation(String date, Sujet sujet, Formateur formateur, Integer paieFormateur, String statut,
-			String statutFormateur, Long id) {
+			String statutFormateur, Integer id) {
 		super();
 		this.date = date;
 		this.sujet = sujet;
@@ -70,10 +81,10 @@ public class Formation extends BaseModel {
 	public void setPaieFormateur(Integer paieFormateur) {
 		this.paieFormateur = paieFormateur;
 	}
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 }

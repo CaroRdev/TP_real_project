@@ -14,7 +14,7 @@ public class FormationTest extends TestCase {
         		300,
         		"active",
         		"original",
-        		Long.valueOf(1)
+        		1
         	)).toString()
         );
     }

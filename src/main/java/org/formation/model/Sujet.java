@@ -2,27 +2,29 @@ package org.formation.model;
 
 import java.util.List;
 
-public class Sujet extends BaseModel {
+public class Sujet extends BaseModel {	
+	private Integer id;
+	private String nom;
+	
+	// Region static members
 	private static List<Sujet> sujetList = null;
 	
 	public static List<Sujet> getAll() {
 		if(sujetList == null) sujetList = Fixture.getSujetList();
 		return sujetList;
 	}
+	// End of static members region
 	
-	private Long id;
-	private String nom;
-	
-	public Sujet(String nom, Long id) {
+	public Sujet(String nom, int i) {
 		super();
 		this.nom = nom;
-		this.id = id;
+		this.id = i;
 	}
 	
-	public Long getId() {
+	public Integer getId() {
 		return id;
 	}
-	public void setId(Long id) {
+	public void setId(Integer id) {
 		this.id = id;
 	}
 	public String getNom() {
