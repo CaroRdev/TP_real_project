@@ -13,10 +13,10 @@ import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.PushBuilder;
 
-@WebServlet("/Formateur")
+@WebServlet("/Remboursement")
 public class RemboursementServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws IOException,ServletException {    			
-		request.getRequestDispatcher("/Formateur.jsp").forward(request, resp);
+		request.getRequestDispatcher("/Remboursement.jsp").forward(request, resp);
 	}
 }
