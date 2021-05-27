@@ -17,6 +17,6 @@ import jakarta.servlet.http.PushBuilder;
 public class FusionFormationServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws IOException,ServletException {    			
-		request.getRequestDispatcher("/FusionFormation.jsp").forward(request, resp);
+		request.getRequestDispatcher("/formations/FusionFormation.jsp").forward(request, resp);
 	}
 }

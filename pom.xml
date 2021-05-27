@@ -51,6 +51,6 @@
 				<version>3.3.1</version>
 			</plugin>
 		</plugins>
-		<finalName>java-web-project</finalName>
+		<finalName>TP_real_project</finalName>
 	</build>
 </project>

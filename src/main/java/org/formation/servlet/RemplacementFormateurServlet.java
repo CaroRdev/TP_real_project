@@ -17,6 +17,6 @@ import jakarta.servlet.http.PushBuilder;
 public class RemplacementFormateurServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws IOException,ServletException {    			
-		request.getRequestDispatcher("/Formateur.jsp").forward(request, resp);
+		request.getRequestDispatcher("/formations/RemplacementFormateur.jsp").forward(request, resp);
 	}
 }

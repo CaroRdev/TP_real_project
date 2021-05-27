@@ -20,6 +20,6 @@ import jakarta.servlet.http.PushBuilder;
 public class FormationServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws IOException,ServletException {    			
-		request.getRequestDispatcher("/Formation.jsp").forward(request, resp);
+		request.getRequestDispatcher("/formations/Formation.jsp").forward(request, resp);
 	}
 }

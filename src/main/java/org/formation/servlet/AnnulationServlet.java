@@ -17,6 +17,6 @@ import jakarta.servlet.http.PushBuilder;
 public class AnnulationServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws IOException,ServletException {    			
-		request.getRequestDispatcher("/Formateur.jsp").forward(request, resp);
+		request.getRequestDispatcher("/formations/Annulation.jsp").forward(request, resp);
 	}
 }

@@ -17,6 +17,6 @@ import jakarta.servlet.http.PushBuilder;
 public class RemboursementServlet extends HttpServlet {
 	@Override
     protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws IOException,ServletException {    			
-		request.getRequestDispatcher("/Remboursement.jsp").forward(request, resp);
+		request.getRequestDispatcher("/formations/Remboursement.jsp").forward(request, resp);
 	}
 }
