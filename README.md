@@ -1,2 +1,2 @@
 # first_real_project
-Ceci n'est plus l'edit ouma mais l'edit de Lorena
+Ceci n'est plus l'edit ouma mais l'edit de Lorena, non de caroline
