@@ -50,8 +50,8 @@ public class Fixture {
 				dfo,
 				dumbledore,
 				500,
-				"active",
-				"original",
+				"Active",
+				"Original",
 				1
 		);
 		
@@ -60,8 +60,8 @@ public class Fixture {
 				alchimie,
 				rogue,
 				300,
-				"active",
-				"original",
+				"Active",
+				"Original",
 				2
 		);
 	}
