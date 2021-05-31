@@ -25,6 +25,80 @@ public class Fixture {
 	
 	private static void initAll() {
 		sujetFixture = new ArrayList<Sujet>();
-		sujetFixture.add(new Sujet("Alchimie", 1));
+		formationFixture = new ArrayList<Formation>();
+		formateurFixture = new ArrayList<Formateur>();
+		
+		Sujet alchimie = addSujet("Alchimie", 1);
+		Sujet divination = addSujet("Divination", 2);
+		Sujet dfo = addSujet("Defense forces obscures", 3);
+
+		Formateur rogue = addFormateur("Rogue", 1);
+		rogue.getSujets().add(alchimie);
+		rogue.getSujets().add(dfo);
+				
+		Formateur dumbledore = addFormateur("Dumbledore", 2);
+		rogue.getSujets().add(dfo);		
+		dumbledore.setSolde(2000);
+		
+		Formateur siriusBlack = addFormateur("Sirius Black", 3);
+		rogue.getSujets().add(alchimie);	
+		rogue.getSujets().add(divination);	
+		rogue.getSujets().add(dfo);
+		
+		Formation dfoFormation = addFormation(
+				"20210608",
+				dfo,
+				dumbledore,
+				500,
+				"active",
+				"original",
+				1
+		);
+		
+		Formation alchimieFormation = addFormation(
+				"20211031",
+				alchimie,
+				rogue,
+				300,
+				"active",
+				"original",
+				2
+		);
+	}
+	
+	private static Formation addFormation(
+			String date, 
+			Sujet sujet,
+			Formateur dumbledore, 
+			int paieFormateur, 
+			String statut, 
+			String statutFormateur,
+			int id) {
+		Formation formation = new Formation(
+			date, 
+			sujet, 
+			dumbledore, 
+			paieFormateur, 
+			statut, 
+			statutFormateur,
+			id
+		);
+		formationFixture.add(formation);
+		
+		return formation;
+	}
+
+	private static Sujet addSujet(String nom, Integer id) {
+		Sujet newSujet = new Sujet(nom, id);
+		sujetFixture.add(newSujet);
+		
+		return newSujet;
+	}
+	
+	private static Formateur addFormateur(String nom, Integer id) {
+		Formateur newFormateur = new Formateur(nom, id);
+		formateurFixture.add(newFormateur);
+		
+		return newFormateur;
 	}
 }
