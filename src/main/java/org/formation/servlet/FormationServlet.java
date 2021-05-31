@@ -59,7 +59,7 @@ public class FormationServlet extends HttpServlet {
 		}
 		
 		if(formateur == null) {
-			formateur = new Formateur()
+			formateur = new Formateur();
 		}
 		
 	}
