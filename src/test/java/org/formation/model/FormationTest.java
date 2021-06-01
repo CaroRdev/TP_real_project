@@ -1,7 +1,6 @@
 package org.formation.model;
 
 import java.util.List;
-import java.util.Stream;
 
 import junit.framework.TestCase;
 
