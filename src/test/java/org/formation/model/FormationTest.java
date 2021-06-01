@@ -2,6 +2,8 @@ package org.formation.model;
 
 import java.util.List;
 
+import org.junit.Assert;
+
 import junit.framework.TestCase;
 
 public class FormationTest extends TestCase {
@@ -25,5 +27,11 @@ public class FormationTest extends TestCase {
 		// What we are mainly testing here is that the method call doesn't raise
 		// an error
 		assertTrue(Formation.getAll() instanceof List<?>);
+	}
+	
+	public void testIsRemboursee() {
+		assertTrue(new Formation("20210601",null, null, 250, "Remboursee","Original", 666).isRemboursee());
+		assertFalse(new Formation("20210602",null, null, 700, "Annulee","Original", 333).isRemboursee());
+		
 	}
 }
