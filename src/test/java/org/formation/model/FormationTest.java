@@ -1,24 +1,39 @@
 package org.formation.model;
 
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
+
+import org.formation.bean.FormationBean;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
+
+import org.junit.Assert;
 
 import junit.framework.TestCase;
 
 public class FormationTest extends TestCase {
 	public void testToString()
 	{     
+		Formation formation = new Formation(
+        		"20210528", null      , null, 300,
+        		"Active"  , "Original", 1);
+		
         assertEquals(
         	"Formation;20210528;NULL;1;300;Active;Original;NULL",
-        	(new Formation(
-        		"20210528", 
-        		null, 
-        		null,
-        		300,
-        		"Active",
-        		"Original",
-        		1
-        	)).toString()
+        	formation.toString()
+        );
+        
+        // NRO-example : mocking instance method
+        Formation formationSpied = spy(formation);
+        when(formationSpied.getDate()).thenReturn("20210101");
+        
+        assertEquals(
+            "Formation;20210101;NULL;1;300;Active;Original;NULL",
+            formationSpied.toString()
         );
     }
 	
@@ -37,5 +52,11 @@ public class FormationTest extends TestCase {
 	public void testIsAnnulee() {
 		assertFalse(new Formation("20210528",  null, null,300,"Active","Original",1).isAnnulee());
 		assertTrue(new Formation("20210528",  null, null,300,"Annulee","Original",1).isAnnulee());
+	}
+	
+	public void testIsRemboursee() {
+		assertTrue(new Formation("20210601",null, null, 250, "Remboursee","Original", 666).isRemboursee());
+		assertFalse(new Formation("20210602",null, null, 700, "Annulee","Original", 333).isRemboursee());
+		
 	}
 }

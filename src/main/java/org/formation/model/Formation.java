@@ -13,29 +13,29 @@ public class Formation extends BaseModel {
 	private Sujet sujet;
 	private Formateur formateur;
 	private Integer paieFormateur;
-	
+
 	private String statut;
 	private static final String[] allowedStatus = new String[] {
 			"Active", "Annulee", "Remboursee", "Fusionnee"
 	};
-	
+
 	private String statutFormateur;
 	private static final String[] allowedTrainerStatus = new String[] {
 			"Original", "Remplace"
 	};
-	
+
 	private Integer id;
 	private Set<Formation> formationsFusionnees = new HashSet<Formation>();
-	
+
 	// Region static members
 	private static List<Formation> formationList = null;
-	
+
 	public static List<Formation> getAll() {
 		if(formationList == null) formationList = Fixture.getFormationList();
 		return formationList;
 	}
 	// End of static members region
-	
+
 	public Formation() {}
 	public Formation(String date, Sujet sujet, Formateur formateur, Integer paieFormateur, String statut,
 			String statutFormateur, Integer id) {
@@ -48,7 +48,7 @@ public class Formation extends BaseModel {
 		this.setStatutFormateur(statutFormateur);
 		this.id = id;
 	}
-	
+
 	public String getDate() {
 		return date;
 	}
@@ -98,23 +98,26 @@ public class Formation extends BaseModel {
 		}
 		this.statutFormateur = statutFormateur;
 	}
-	
+
 	public Integer getPaieFormateur() {
 		return paieFormateur;
 	}
-	
+
 	public void setPaieFormateur(Integer paieFormateur) {
 		this.paieFormateur = paieFormateur;
 	}
-	
+
 	public Integer getId() {
 		return id;
 	}
-	
+
 	public void setId(Integer id) {
 		this.id = id;
 	}
-	
+
+	public boolean isRemboursee () {
+		return this.statut.equals("Remboursee");
+	}
 	public boolean isFusionnee() {
 		return this.statut.equals("Fusionnee");
 	}
@@ -123,3 +126,4 @@ public class Formation extends BaseModel {
 		return this.statut.equals("Annulee");
 	}
 }
+
