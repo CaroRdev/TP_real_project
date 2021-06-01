@@ -5,7 +5,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Stream;
+import java.util.Collection;
 import java.util.stream.Collectors;
 
 import org.formation.bean.FormationBean;
