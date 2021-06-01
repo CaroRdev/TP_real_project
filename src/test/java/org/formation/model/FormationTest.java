@@ -41,7 +41,10 @@ public class FormationTest extends TestCase {
 		// What we are mainly testing here is that the method call doesn't raise
 		// an error
 		assertTrue(Formation.getAll() instanceof List<?>);
-		assertEquals(1,Formation.getAll().stream().filter(p -> p.getStatut().equals("Fusionnee")).collect(Collectors.toList()).size());
+	}
+	
+	public void testGetFusionnee() {
+		assertEquals(1,Formation.getAll().stream().filter(p -> p.isFusionnee()).collect(Collectors.toList()).size());
 	}
 	
 	public void testIsFusionnee() {
