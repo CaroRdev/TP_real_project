@@ -28,6 +28,9 @@ public class Formateur extends BaseModel {
 	// End of static members region
 	
 	public Formateur() {}
+	public Formateur(String nom, Integer id) {
+		this(nom, 0, id);
+	}
 	public Formateur(String nom, Integer solde, Integer id) {
 		super();
 		this.nom = nom;
