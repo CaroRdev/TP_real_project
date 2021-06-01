@@ -1,23 +1,36 @@
 package org.formation.model;
 
+import static org.mockito.Mockito.spy;
+import static org.mockito.Mockito.when;
+
+import java.util.ArrayList;
 import java.util.List;
+
+import org.formation.bean.FormationBean;
+import org.mockito.MockedStatic;
+import org.mockito.Mockito;
 
 import junit.framework.TestCase;
 
 public class FormationTest extends TestCase {
 	public void testToString()
 	{     
+		Formation formation = new Formation(
+        		"20210528", null      , null, 300,
+        		"Active"  , "Original", 1);
+		
         assertEquals(
         	"Formation;20210528;NULL;1;300;Active;Original;NULL",
-        	(new Formation(
-        		"20210528", 
-        		null, 
-        		null,
-        		300,
-        		"Active",
-        		"Original",
-        		1
-        	)).toString()
+        	formation.toString()
+        );
+        
+        // NRO-example : mocking instance method
+        Formation formationSpied = spy(formation);
+        when(formationSpied.getDate()).thenReturn("20210101");
+        
+        assertEquals(
+            "Formation;20210101;NULL;1;300;Active;Original;NULL",
+            formationSpied.toString()
         );
     }
 	
