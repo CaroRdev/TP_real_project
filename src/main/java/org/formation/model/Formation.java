@@ -116,10 +116,10 @@ public class Formation extends BaseModel {
 	}
 	
 	public boolean isFusionnee() {
-		return this.statut == "Fusionnee";
+		return this.statut.equals("Fusionnee");
 	}
 
 	public boolean isAnnulee(){
-		return this.statut == "Annulee";
+		return this.statut.equals("Annulee");
 	}
 }
