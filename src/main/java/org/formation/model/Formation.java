@@ -116,7 +116,6 @@ public class Formation extends BaseModel {
 	}
 	
 	public boolean isFusionnee() {
-		if (this.statut == "Fusionnee") return true;
-		return false;
+		return this.statut == "Fusionnee";
 	}
 }
