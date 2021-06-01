@@ -11,6 +11,8 @@ import org.formation.bean.FormationBean;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
 
+import org.junit.Assert;
+
 import junit.framework.TestCase;
 
 public class FormationTest extends TestCase {
@@ -50,5 +52,11 @@ public class FormationTest extends TestCase {
 	public void testIsAnnulee() {
 		assertFalse(new Formation("20210528",  null, null,300,"Active","Original",1).isAnnulee());
 		assertTrue(new Formation("20210528",  null, null,300,"Annulee","Original",1).isAnnulee());
+	}
+	
+	public void testIsRemboursee() {
+		assertTrue(new Formation("20210601",null, null, 250, "Remboursee","Original", 666).isRemboursee());
+		assertFalse(new Formation("20210602",null, null, 700, "Annulee","Original", 333).isRemboursee());
+		
 	}
 }
