@@ -31,6 +31,7 @@ public class Fixture {
 		Sujet alchimie = addSujet("Alchimie", 1);
 		Sujet divination = addSujet("Divination", 2);
 		Sujet dfo = addSujet("Defense forces obscures", 3);
+		Sujet sortilege = addSujet("Sortilege", 4);
 
 		Formateur rogue = addFormateur("Rogue", 1);
 		rogue.getSujets().add(alchimie);
@@ -44,8 +45,11 @@ public class Fixture {
 		rogue.getSujets().add(alchimie);	
 		rogue.getSujets().add(divination);	
 		rogue.getSujets().add(dfo);
+		rogue.getSujets().add(sortilege);
 		
 		Formateur trelawney = addFormateur("Trelawney", 4);
+		
+		Formateur flitwick = addFormateur ("Flitwick", 4);
 		
 		Formation dfoFormation = addFormation(
 				"20210608",
@@ -76,6 +80,17 @@ public class Fixture {
 				"Original",
 				2
 		);
+		
+		
+		Formation sortilegeFormation = addFormation(
+				"20210601",
+				sortilege,
+				flitwick,
+				400,
+				"Remboursee",
+				"Original",
+				4
+				);
 	}
 	
 	private static Formation addFormation(
