@@ -5,6 +5,7 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
 
 import org.formation.bean.FormationBean;
 import org.mockito.MockedStatic;
@@ -38,6 +39,7 @@ public class FormationTest extends TestCase {
 		// What we are mainly testing here is that the method call doesn't raise
 		// an error
 		assertTrue(Formation.getAll() instanceof List<?>);
+		assertEquals(1,Formation.getAll().stream().filter(p -> p.getStatut().equals("Fusionnee")).collect(Collectors.toList()).size());
 	}
 	
 	public void testIsFusionnee() {
