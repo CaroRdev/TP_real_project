@@ -1,6 +1,5 @@
 package org.formation.model;
 
-import java.lang.reflect.Field;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.lang.reflect.Modifier;
@@ -19,8 +18,9 @@ public abstract class BaseModel {
 		}	
 	}
 	
+	// NRO-example : reflection
 	public String toString() {
-		Method[] fs = this.getClass().getMethods();
+		java.lang.reflect.Method[] fs = this.getClass().getMethods();
 		ArrayList<Method> methodList = new ArrayList<Method>(
 				Arrays.asList(fs)
 		);

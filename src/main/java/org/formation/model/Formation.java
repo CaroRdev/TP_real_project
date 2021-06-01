@@ -1,6 +1,9 @@
 package org.formation.model;
 
+import java.util.Arrays;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 import jakarta.annotation.ManagedBean;
 
@@ -10,9 +13,19 @@ public class Formation extends BaseModel {
 	private Sujet sujet;
 	private Formateur formateur;
 	private Integer paieFormateur;
+	
 	private String statut;
+	private static final String[] allowedStatus = new String[] {
+			"Active", "Annulee", "Remboursee", "Fusionnee"
+	};
+	
 	private String statutFormateur;
+	private static final String[] allowedTrainerStatus = new String[] {
+			"Original", "Remplace"
+	};
+	
 	private Integer id;
+	private Set<Formation> formationsFusionnees = new HashSet<Formation>();
 	
 	// Region static members
 	private static List<Formation> formationList = null;
@@ -31,8 +44,8 @@ public class Formation extends BaseModel {
 		this.sujet = sujet;
 		this.formateur = formateur;
 		this.paieFormateur = paieFormateur;
-		this.statut = statut;
-		this.statutFormateur = statutFormateur;
+		this.setStatut(statut);
+		this.setStatutFormateur(statutFormateur);
 		this.id = id;
 	}
 	
@@ -65,6 +78,11 @@ public class Formation extends BaseModel {
 	}
 
 	public void setStatut(String statut) {
+		if(statut != null) {
+			if(!Arrays.asList(allowedStatus).contains(statut)) {
+				throw new IllegalArgumentException("Invalid statut " + statut);
+			}
+		}
 		this.statut = statut;
 	}
 
@@ -73,17 +91,26 @@ public class Formation extends BaseModel {
 	}
 
 	public void setStatutFormateur(String statutFormateur) {
+		if(statutFormateur != null) {
+			if(!Arrays.asList(allowedTrainerStatus).contains(statutFormateur)) {
+				throw new IllegalArgumentException("Invalid statut formateur " + statutFormateur);
+			}
+		}
 		this.statutFormateur = statutFormateur;
 	}
+	
 	public Integer getPaieFormateur() {
 		return paieFormateur;
 	}
+	
 	public void setPaieFormateur(Integer paieFormateur) {
 		this.paieFormateur = paieFormateur;
 	}
+	
 	public Integer getId() {
 		return id;
 	}
+	
 	public void setId(Integer id) {
 		this.id = id;
 	}
