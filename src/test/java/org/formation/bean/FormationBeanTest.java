@@ -14,6 +14,7 @@ public class FormationBeanTest extends TestCase {
 	{     
         assertEquals(2, FormationBean.getAllActiveFormations().size());
     
+        // NRO-example : mocking static method
         try (MockedStatic<Formation> utilities = Mockito.mockStatic(Formation.class)) {
         	utilities.when(Formation::getAll).thenReturn(new ArrayList());
             
