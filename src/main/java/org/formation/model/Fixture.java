@@ -69,8 +69,8 @@ public class Fixture {
 		
 		Formation divinationFormation = addFormation(
 				"20211031",
-				null,
-				null,
+				divination,
+				trelawney,
 				300,
 				"Fusionnee",
 				"Original",
@@ -113,6 +113,4 @@ public class Fixture {
 		
 		return newFormateur;
 	}
-	
-	
 }
