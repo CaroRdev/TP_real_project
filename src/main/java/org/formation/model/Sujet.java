@@ -14,6 +14,9 @@ public class Sujet extends BaseModel {
 		return sujetList;
 	}
 	// End of static members region
+	public Sujet(String nom) {
+		this(nom, getAll().size() + 1);
+	}
 	
 	public Sujet(String nom, int i) {
 		super();
