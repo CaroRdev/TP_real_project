@@ -34,4 +34,9 @@ public class FormationTest extends TestCase {
 		assertFalse(new Formation("20210528",  null, null,300,"Active","Original",1).isFusionnee());
 		assertTrue(new Formation("20210528",  null, null,300,"Fusionnee","Original",1).isFusionnee());
 	}
+
+	public void testIsAnnulee() {
+		assertFalse(new Formation("20210528",  null, null,300,"Active","Original",1).isAnnulee());
+		assertTrue(new Formation("20210528",  null, null,300,"Annulee","Original",1).isAnnulee());
+	}
 }
