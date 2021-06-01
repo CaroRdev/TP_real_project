@@ -45,6 +45,8 @@ public class Fixture {
 		rogue.getSujets().add(divination);	
 		rogue.getSujets().add(dfo);
 		
+		Formateur trelawney = addFormateur("Trelawney", 4);
+		
 		Formation dfoFormation = addFormation(
 				"20210608",
 				dfo,
@@ -61,6 +63,16 @@ public class Fixture {
 				rogue,
 				300,
 				"Active",
+				"Original",
+				2
+		);
+		
+		Formation divinationFormation = addFormation(
+				"20211031",
+				null,
+				null,
+				300,
+				"Fusionnee",
 				"Original",
 				2
 		);
@@ -101,4 +113,6 @@ public class Fixture {
 		
 		return newFormateur;
 	}
+	
+	
 }
