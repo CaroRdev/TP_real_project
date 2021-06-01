@@ -5,12 +5,13 @@ import static org.mockito.Mockito.when;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Collection;
 import java.util.stream.Collectors;
 
 import org.formation.bean.FormationBean;
 import org.mockito.MockedStatic;
 import org.mockito.Mockito;
+
+import org.junit.Assert;
 
 import junit.framework.TestCase;
 
@@ -55,5 +56,11 @@ public class FormationTest extends TestCase {
 
 	public void testOneOfAllAnnulee() {
 		assertEquals(Formation.getAll().stream().filter((s) -> s.isAnnulee()).count(),1);
+	}
+	
+	public void testIsRemboursee() {
+		assertTrue(new Formation("20210601",null, null, 250, "Remboursee","Original", 666).isRemboursee());
+		assertFalse(new Formation("20210602",null, null, 700, "Annulee","Original", 333).isRemboursee());
+		
 	}
 }
