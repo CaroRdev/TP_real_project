@@ -114,4 +114,9 @@ public class Formation extends BaseModel {
 	public void setId(Integer id) {
 		this.id = id;
 	}
+	
+	public boolean isFusionnee() {
+		if (this.statut == "Fusionnee") return true;
+		return false;
+	}
 }

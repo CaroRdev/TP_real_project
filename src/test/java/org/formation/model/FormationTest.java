@@ -26,4 +26,9 @@ public class FormationTest extends TestCase {
 		// an error
 		assertTrue(Formation.getAll() instanceof List<?>);
 	}
+	
+	public void testIsFusionnee() {
+		assertFalse(new Formation("20210528",  null, null,300,"Active","Original",1).isFusionnee());
+		assertTrue(new Formation("20210528",  null, null,300,"Fusionnee","Original",1).isFusionnee());
+	}
 }
