@@ -66,6 +66,16 @@ public class Fixture {
 				"Original",
 				2
 		);
+
+		Formation annuleeFormation = addFormation(
+			"20211031",
+			alchimie,
+			rogue,
+			10,
+			"Annulee",
+			"Original",
+			3
+		);
 		
 		Formation divinationFormation = addFormation(
 				"20211031",

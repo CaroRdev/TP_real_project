@@ -53,6 +53,10 @@ public class FormationTest extends TestCase {
 		assertFalse(new Formation("20210528",  null, null,300,"Active","Original",1).isAnnulee());
 		assertTrue(new Formation("20210528",  null, null,300,"Annulee","Original",1).isAnnulee());
 	}
+
+	public void testOneOfAllAnnulee() {
+		assertEquals(Formation.getAll().stream().filter((s) -> s.isAnnulee()).count(),1);
+	}
 	
 	public void testIsRemboursee() {
 		assertTrue(new Formation("20210601",null, null, 250, "Remboursee","Original", 666).isRemboursee());
