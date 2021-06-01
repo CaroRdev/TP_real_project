@@ -1,6 +1,7 @@
 package org.formation.model;
 
 import java.util.List;
+import java.util.Stream;
 
 import junit.framework.TestCase;
 
@@ -35,5 +36,9 @@ public class FormationTest extends TestCase {
 	public void testIsAnnulee() {
 		assertFalse(new Formation("20210528",  null, null,300,"Active","Original",1).isAnnulee());
 		assertTrue(new Formation("20210528",  null, null,300,"Annulee","Original",1).isAnnulee());
+	}
+
+	public void testOneOfAllAnnulee() {
+		assertEquals(Formation.getAll().stream().filter((s) -> s.isAnnulee()).count(),1);
 	}
 }
