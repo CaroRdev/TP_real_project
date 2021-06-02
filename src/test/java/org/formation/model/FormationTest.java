@@ -60,8 +60,11 @@ public class FormationTest extends TestCase {
 	}
 
 	public void testIsAnnulee() {
+        Formation formationSpied = spy(Formation.class);
+        when(formationSpied.getStatut()).thenReturn("Annulee");
+        assertTrue(formationSpied.isAnnulee());
+		
 		assertFalse(new Formation("20210528",  null, null,300,"Active","Original",1).isAnnulee());
-		assertTrue(new Formation("20210528",  null, null,300,"Annulee","Original",1).isAnnulee());
 	}
 
 	public void testOneOfAllAnnulee() {
