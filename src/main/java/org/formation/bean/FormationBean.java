@@ -10,7 +10,7 @@ import org.formation.model.Sujet;
 
 public class FormationBean {
 
-	public static void addNewFormation(String date, String nomSujet, String nomFormateur, String paieFormateur) {
+	public static Formation addNewFormation(String date, String nomSujet, String nomFormateur, String paieFormateur) {
 		Sujet sujet = null;
 		List<Sujet> sujets = Sujet.getAll();
 		for(Sujet s: sujets) {
@@ -26,13 +26,26 @@ public class FormationBean {
 		List<Formateur> formateurs = Formateur.getAll();
 		
 		for(Formateur f: formateurs) {
-			if(f.getNom().equals(nomSujet)) {
+			if(f.getNom().equals(nomFormateur)) {
 				formateur = f;
 				break;
 			}
 		}
 		
-		if(formateur == null) { formateur = new Formateur(); }
+		if(formateur == null) { formateur = new Formateur(nomFormateur); }
+		/* Formation(String date, Sujet sujet, Formateur formateur, Integer paieFormateur, String statut,
+			String statutFormateur, Integer id) */
+
+		Integer paie = 0;
+		try {
+			paie = Integer.parseInt(paieFormateur);
+		}
+		catch(Exception e) {}
+		
+		Formation formation = new Formation(date, sujet, formateur, paie);
+		Formation.getAll().add(formation);
+		
+		return formation;
 	}
 	
 	public static List<Formation> getAllActiveFormations() {

@@ -49,7 +49,7 @@ public class Fixture {
 		
 		Formateur trelawney = addFormateur("Trelawney", 4);
 		
-		Formateur flitwick = addFormateur ("Flitwick", 4);
+		Formateur flitwick = addFormateur ("Flitwick", 5);
 		
 		Formation dfoFormation = addFormation(
 				"20210608",
@@ -88,7 +88,7 @@ public class Fixture {
 				300,
 				"Fusionnee",
 				"Original",
-				2
+				4
 		);
 		
 		
@@ -99,7 +99,7 @@ public class Fixture {
 				400,
 				"Remboursee",
 				"Original",
-				4
+				5
 				);
 	}
 	
