@@ -37,15 +37,6 @@ public class FormationTest extends TestCase {
             "Formation;ma date;NULL;1;300;Active;Original;NULL",
             formationSpied.toString()
         );
-        
-        // NRO-example : mocking instance method mock
-        Formation mockedFormation = mock(Formation.class);
-        when(mockedFormation.getDate()).thenReturn("20210101");
-        
-        assertEquals(
-                "Mock for Formation, hashCode: 1289869008",
-                mockedFormation.toString()
-            );
     }
 	
 	public void testGetAll() {
