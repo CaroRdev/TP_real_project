@@ -9,10 +9,32 @@
    </head> 
    <body>
 	   <button type="button" onclick="exercice1()">Exercice 1</button>
+	   <button type="button" onclick="exercice2()">Exercice 2</button>
+	   
+	   <div id="heure" class="text-center btn-warning"></div>
 		
       <script>
       	function exercice1() {
-      		
+      	    $.ajax({
+      	      url: 'Exercice1',
+      	    }).done(function(resp) {
+          	    console.log(resp.message);
+      	    	alert(resp.message);
+      	    }).catch(function(e) {
+      	    	console.log('Call to ajax worked !')
+      	    	console.log(e);
+      	    });
+      	}; 
+      	
+      	function exercice2() {
+      	    $.ajax({
+      	      url: 'Exercice2',
+      	    }).done(function(resp) {
+      	    	document.getElementById("heure").innerHTML = `il est ${resp.heure}h${resp.minute}`;
+      	    }).catch(function(e) {
+      	    	console.log('Call to ajax worked !')
+      	    	console.log(e);
+      	    });
       	}; 
       </script>
    </body>
