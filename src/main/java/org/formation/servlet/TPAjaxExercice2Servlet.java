@@ -31,12 +31,12 @@ public class TPAjaxExercice2Servlet extends HttpServlet {
 		LocalTime hour = LocalTime.now();
 		hourMap.put("heure", String.valueOf(hour.getHour()));
 		hourMap.put("minute", String.valueOf(hour.getMinute()));
-		String helloJson = this.gson.toJson(hourMap);
+		String hourJson = this.gson.toJson(hourMap);
 
         PrintWriter out = resp.getWriter();
         resp.setContentType("application/json");
         resp.setCharacterEncoding("UTF-8");
-        out.print(helloJson);
+        out.print(hourJson);
         out.flush();   
 	}
 }

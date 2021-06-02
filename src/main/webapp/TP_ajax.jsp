@@ -10,10 +10,16 @@
    <body>
 	   <button type="button" onclick="exercice1()">Exercice 1</button>
 	   <button type="button" onclick="exercice2()">Exercice 2</button>
+	   <button type="button" onclick="exercice3()">Exercice 3</button>
 	   
 	   <div id="heure" class="text-center btn-warning"></div>
+	   
+	   <div id="citation"></div>
 		
       <script>
+
+      	let new_line = "";
+      
       	function exercice1() {
       	    $.ajax({
       	      url: 'Exercice1',
@@ -36,6 +42,19 @@
       	    	console.log(e);
       	    });
       	}; 
+
+      	function exercice3() {
+      	    $.ajax({
+      	      url: 'Exercice3',
+      	    }).done(function(resp) {
+      	    	new_line += `<p>${resp.citation}</p>`;
+      	    	document.getElementById("citation").innerHTML = new_line;
+      	    }).catch(function(e) {
+      	    	console.log('Call to ajax worked !')
+      	    	console.log(e);
+      	    });
+      	}; 
+      	
       </script>
    </body>
 </html>
