@@ -7,7 +7,7 @@ import org.formation.model.Formation;
 
 public class AnnulationBean {
 
-  public List<Formation> selectAnnulation() {
+  public static List<Formation> selectAnnulation() {
     return Formation.getAll().stream()
     .filter((s) -> s.isAnnulee()).collect(Collectors.toList());
   }
