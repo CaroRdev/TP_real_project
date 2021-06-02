@@ -65,6 +65,7 @@ public class FormationTest extends TestCase {
         Formation annuleeSpied = spy(Formation.class);
         when(annuleeSpied.getStatut()).thenReturn("Annulee");
         assertTrue(annuleeSpied.isAnnulee());
+        
         Formation nonAnnuleeSpied = spy(Formation.class);
         when(nonAnnuleeSpied.getStatut()).thenReturn("Active");
         assertFalse(nonAnnuleeSpied.isAnnulee());
