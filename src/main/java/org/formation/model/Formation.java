@@ -120,7 +120,7 @@ public class Formation extends BaseModel {
 	}
 
 	public boolean isRemboursee () {
-		return this.statut.equals("Remboursee");
+		return getStatut().equals("Remboursee");
 	}
 	
 	public boolean isFusionnee() {

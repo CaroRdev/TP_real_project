@@ -10,31 +10,14 @@ import org.formation.model.Sujet;
 
 public class FormationBean {
 
-	public static Formation addNewFormation(String date, String nomSujet, String nomFormateur, String paieFormateur) {
-		Sujet sujet = null;
-		List<Sujet> sujets = Sujet.getAll();
-		for(Sujet s: sujets) {
-			if(s.getNom().equals(nomSujet)) {
-				sujet = s;
-				break;
-			}
-		}
-		
-		if(sujet == null) { sujet = new Sujet(nomSujet); }
-		
-		Formateur formateur = null;
-		List<Formateur> formateurs = Formateur.getAll();
-		
-		for(Formateur f: formateurs) {
-			if(f.getNom().equals(nomFormateur)) {
-				formateur = f;
-				break;
-			}
-		}
-		
-		if(formateur == null) { formateur = new Formateur(nomFormateur); }
-		/* Formation(String date, Sujet sujet, Formateur formateur, Integer paieFormateur, String statut,
-			String statutFormateur, Integer id) */
+	public static Formation addNewFormation(String date, String nomSujet, String nomFormateur, String paieFormateur)
+	{
+		return (new FormationBean()).addNewFormationImpl(date, nomSujet, nomFormateur, paieFormateur);
+	}
+	
+	Formation addNewFormationImpl(String date, String nomSujet, String nomFormateur, String paieFormateur) {
+		Sujet sujet = searchSujetByNom(nomSujet);
+		Formateur formateur = searchOrCreateFormateurByNom(nomFormateur);
 
 		Integer paie = 0;
 		try {
@@ -48,6 +31,37 @@ public class FormationBean {
 		return formation;
 	}
 	
+	Formateur searchOrCreateFormateurByNom(String nomFormateur) {
+		Formateur formateur = null;
+		
+		List<Formateur> formateurs = Formateur.getAll();
+		
+		for(Formateur f: formateurs) {
+			if(f.getNom().equals(nomFormateur)) {
+				formateur = f;
+				break;
+			}
+		}
+		
+		if(formateur == null) { formateur = new Formateur(nomFormateur); }
+		return formateur;
+	}
+
+	Sujet searchSujetByNom(String nomSujet) {
+		Sujet sujet = null;
+		List<Sujet> sujets = Sujet.getAll();
+		for(Sujet s: sujets) {
+			if(s.getNom().equals(nomSujet)) {
+				sujet = s;
+				break;
+			}
+		}
+		
+		if(sujet == null) { sujet = new Sujet(nomSujet); }
+		
+		return sujet;
+	}
+
 	public static List<Formation> getAllActiveFormations() {
 		return Formation.getAll()
 				// NRO : important !
